@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto25
+
+  build:
+    commands:
+      - mvn clean package -DskipTests
+
+artifacts:
+  files:
+    - '*.jar'
+  base-directory: target
+
+cache:
+  paths:
+    - '/root/.m2/repository/**/*'
